@@ -1,0 +1,9 @@
+.vscode/
+env/
+secretes.json
+db.sqlite3
+__pycache__
+*/*/__pycache__
+migrations
+*/*migrations
+*/migrations/*

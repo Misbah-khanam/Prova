@@ -1,0 +1,21 @@
+{% include "Home.html" %}
+{% block body %}
+{% load static %}
+
+<div class="page-body" id="page-body">
+    <div class="my-tests-wrapper">
+        <div class="my-tests-cards">
+            {% for test in my_tests %}
+            <div class="test-card">
+                <h4>Subject: {{test.subject_name}}</h4>
+                <h5>valid upto: {{test.valid_till}}</h5>
+                <center><a class="btn btn-primary test-card-btn" href="{% url 'my_ques' test.id %}" >View</a></center>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="bg-img">
+        <img src="{% static 'assets/undraw_notebook_re_id0r.svg' %}"/>
+    </div>
+</div>
+{% endblock %}

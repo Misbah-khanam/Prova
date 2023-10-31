@@ -1,0 +1,120 @@
+{% include "Home.html" %}
+{% load static %}
+{% block body %}
+<div class="upload_card_wrapper">
+
+    {% for message in messages %}
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-info btn-lg message" data-toggle="modal" data-target="#myModal" style="display: none;" id="message-btn"></button>
+
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Note</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>{{message}}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById("message-btn").click()
+        </script>
+    {% endfor %}
+
+    <div class="upload_card">
+        <h3>Upload Test</h3>
+        <form class="upload_content" action="{% url 'upload_test' %}" method="post">
+            {% csrf_token %}
+            <input name="subject_name" id="subject_name" placeholder="Enter Subject Name" class="card-input" />
+            <input name="valid_date" id="valid_date" type="date" class="card-input-2" /><br/>
+            <div class="each_ques">
+                <input name="question" id="question_1" placeholder="Enter Question 1" class="card-input" />
+                <input name="question_opt_1" id="question_1opt_1" placeholder="Enter option 1" class="card-input-2" /><br/>
+                <input name="question_opt_2" id="question_1opt_2" placeholder="Enter option 2" class="card-input-2" /><br/>
+                <input name="question_opt_3" id="question_1opt_3" placeholder="Enter option 3" class="card-input-2" /><br/>
+                <input name="question_opt_4" id="question_1opt_4" placeholder="Enter option 4" class="card-input-2" /><br/>
+                <select name="ans" id="ans_1" class="ans-dropdown">
+                    <option>Select Answer</option>
+                    <option value="1">option 1 </option>
+                    <option value="2">option 2 </option>
+                    <option value="3">option 3 </option>
+                    <option value="4">option 4 </option>
+                </select>
+            </div>
+            <div class="each_ques">
+                <input name="question" id="question_2" placeholder="Enter Question 2" class="card-input" />
+                <input name="question_opt_1" id="question_2opt_1" placeholder="Enter option 1" class="card-input-2" /><br/>
+                <input name="question_opt_2" id="question_2opt_2" placeholder="Enter option 2" class="card-input-2" /><br/>
+                <input name="question_opt_3" id="question_2opt_3" placeholder="Enter option 3" class="card-input-2" /><br/>
+                <input name="question_opt_4" id="question_2opt_4" placeholder="Enter option 4" class="card-input-2" /><br/>
+                <select name="ans" id="ans_2" class="ans-dropdown">
+                    <option>Select Answer</option>
+                    <option value="1">option 1 </option>
+                    <option value="2">option 2 </option>
+                    <option value="3">option 3 </option>
+                    <option value="4">option 4 </option>
+                </select>
+            </div>
+
+            <div class="each_ques">
+                <input name="question" id="question_3" placeholder="Enter Question 3" class="card-input" />
+                <input name="question_opt_1" id="question_3opt_1" placeholder="Enter option 1" class="card-input-2" /><br/>
+                <input name="question_opt_2" id="question_3opt_2" placeholder="Enter option 2" class="card-input-2" /><br/>
+                <input name="question_opt_3" id="question_3opt_3" placeholder="Enter option 3" class="card-input-2" /><br/>
+                <input name="question_opt_4" id="question_3opt_4" placeholder="Enter option 4" class="card-input-2" /><br/>
+                <select name="ans" id="ans_3" class="ans-dropdown">
+                    <option>Select Answer</option>
+                    <option value="1">option 1 </option>
+                    <option value="2">option 2 </option>
+                    <option value="3">option 3 </option>
+                    <option value="4">option 4 </option>
+                </select>
+            </div>
+
+            <div class="each_ques">
+                <input name="question" id="question_4" placeholder="Enter Question 4" class="card-input" />
+                <input name="question_opt_1" id="question_4opt_1" placeholder="Enter option 1" class="card-input-2" /><br/>
+                <input name="question_opt_2" id="question_4opt_2" placeholder="Enter option 2" class="card-input-2" /><br/>
+                <input name="question_opt_3" id="question_4opt_3" placeholder="Enter option 3" class="card-input-2" /><br/>
+                <input name="question_opt_4" id="question_4opt_4" placeholder="Enter option 4" class="card-input-2" /><br/>
+                <select name="ans" id="ans_4" class="ans-dropdown">
+                    <option>Select Answer</option>
+                    <option value="1">option 1 </option>
+                    <option value="2">option 2 </option>
+                    <option value="3">option 3 </option>
+                    <option value="4">option 4 </option>
+                </select>
+            </div>
+
+            <div class="each_ques">
+                <input name="question" id="question_5" placeholder="Enter Question 5" class="card-input" />
+                <input name="question_opt_1" id="question_5opt_1" placeholder="Enter option 1" class="card-input-2" /><br/>
+                <input name="question_opt_2" id="question_5opt_2" placeholder="Enter option 2" class="card-input-2" /><br/>
+                <input name="question_opt_3" id="question_5opt_3" placeholder="Enter option 3" class="card-input-2" /><br/>
+                <input name="question_opt_4" id="question_5opt_4" placeholder="Enter option 4" class="card-input-2" /><br/>
+                <select name="ans" id="ans_5" class="ans-dropdown">
+                    <option>Select Answer</option>
+                    <option value="1">option 1 </option>
+                    <option value="2">option 2 </option>
+                    <option value="3">option 3 </option>
+                    <option value="4">option 4 </option>
+                </select>
+            </div>
+
+            <center><button class="btn btn-primary submit-test-ques-btn" type="submit">Submit</button></center>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% include "Home.html" %}
+{% block body %}
+<div class="page-body" id="page-body">
+    <div class="my-tests-wrapper">
+        <div>
+            {% for que in ques %}
+                <div class="ques-card">
+                    <h5>{{forloop.counter}}. {{que.question}}</h5>
+                    <div class="options-div">
+                        <p>1. {{que.option_1}}</p>
+                        <p>2. {{que.option_2}}</p>
+                        <p>3. {{que.option_3}}</p>
+                        <p>4. {{que.option_4}}</p>
+                    </div>
+                    <p>Answer: {{que.answer}}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

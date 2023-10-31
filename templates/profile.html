@@ -1,0 +1,25 @@
+{% include "Home.html" %}
+{% block body %}
+<div class="page-body" id="page-body">
+    <div class="profile-card">
+        <table>
+            <tr>
+                <th>Name</th>
+                <td>{{request.user.name}}</td>
+            </tr>
+            <tr>
+                <th>User Type</th>
+                <td>{{request.user.user_type}}</td>
+            </tr>
+            <tr>
+                <th>Phone Number</th>
+                <td>{{request.user.phone}}</td>
+            </tr>
+            <tr>
+                <th>Email Id</th>
+                <td>{{request.user.email}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+{% endblock %}

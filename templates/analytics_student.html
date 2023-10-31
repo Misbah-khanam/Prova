@@ -1,0 +1,38 @@
+{% include "Home.html" %}
+{% load static %}
+{% block body %}
+
+<div class="page-body" id="page-body">
+    <table id="teacher-analytics-table" class="teacher-analytics-table">
+        <thead >
+            <tr>
+                <th>S.no</th>
+                <th>Exam id</th>
+                <th>Subject</th>
+                <th>Student name</th>
+                <th>Max marks</th>
+                <th>Marks obtained</th>
+                <th>Attempt date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in attempted_users_exam %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{student.exam.id}}</td>
+                <td>{{student.exam.subject_name}}</td>
+                <td>{{student.student.name}}</td>
+                <td>5</td>
+                <td>{{student.marks}}</td>
+                <td>{{student.attempt_date}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<script>
+    let table = new DataTable('#teacher-analytics-table');
+</script>
+
+{% endblock %}
